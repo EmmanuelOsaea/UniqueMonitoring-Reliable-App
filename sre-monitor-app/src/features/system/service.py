@@ -11,6 +11,10 @@ class SystemService:
 
 @staticmethod
 
-"memory_usage_percent": 
+status = "Safe" if cpu_usage < 85 and memory percent is less than 85 else critical
+
+return {
+"cpu_usage_percent": cpu-usage,
+"memory_usage_percent": memory.percent,
 "capacity_status": status
 }
