@@ -1,1 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+project xmlns="http://apache.org"
+        xmlns:xsi="http://w3.org"
+       xsi:schemaLocation="http://apache.org http://apache.org">
+<modelVersion>4.0.0</modelVersion>
 
+<parent>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-parent</artifactId>
+  <version>3.3.4</version>
+  <relativePath>
+  </parent>
+
+<groupId>com.monitoring</groupId>
+<artifactId>backend</artifactId>
+<version>0.0.1-SNAPSHOT</version>
