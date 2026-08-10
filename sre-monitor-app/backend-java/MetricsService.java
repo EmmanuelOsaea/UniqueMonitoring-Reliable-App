@@ -5,9 +5,8 @@ import org.springframework.web.client.RestClient;
  public class MetricsService {
 
 private final RestClient restClient = RestClient.create();
-
-
-    url ("http
+    return restClient.get()
+    url ("http://localhost8000metrics")
    .retrieve()
    .body(String.Class);
  }
