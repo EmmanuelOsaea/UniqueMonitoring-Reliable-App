@@ -3,7 +3,7 @@ import time
 
 def get network metrics
 
-Gstgers betwork Traffic, packets counts abd network metrucs
+def get network traffic, packets counts and network metrics
 
 try
 io_counters = psutil.net_io_counters()
