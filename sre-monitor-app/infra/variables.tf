@@ -21,5 +21,21 @@ default = "dev"
 # 3. Compute / Instance Configurations
 variable = "instance_type" {
 type = string
-description = " "
-default = " "
+description = "The size of virtual machine instance"
+default = "t3.micro"
+}
+
+# 4.Network Configurations
+variable = "vpc_cidr" {
+type = string
+description = "The size of virtual machine instance"
+default = "10.0.0.0/16"
+}
+
+# 5.Sensitive Variables(No defaults for security)
+variable "db_password" {
+type = string
+description = "The master password  for the database layer"
+sensitive = "true"
+}
+
