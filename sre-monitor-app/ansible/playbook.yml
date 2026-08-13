@@ -1,1 +1,51 @@
+---
+-name: Configure Application Servers and Deploy Apps
+hosts: webservers
+become: true
+gather_facts: true
+
+vars: 
+app_user: "deploy"
+app_dir: "/var/www/monitor-app"
+
+handlers:
+- name: Respond Systemd Service
+ansible.builtin.systemd:
+name: monitor app
+start: restarted
+daemon_reload: true
+
+tasks:
+- name: Ensure required system packages are present
+ansible.builtin.apt:
+   name:
+   - curl
+   - git
+   - python3-pip
+   state: present
+   update_cache: true 
+
+   tasks:
+ 
+  
+  
+  
+  
+  
+  
+  - name: Copy production application configuration template
+  ansible.builtin.template:
+     src: templates/settings.py.j2
+     des: {{ app_dir }}/settings.py"
+     owner: {{
+
+
+
+
+  
+  - name: Ensure required system packages are present
+ansible.builtin.systemd: 
+  name: monitor-app
+  state: started
+  enabled: true
 
