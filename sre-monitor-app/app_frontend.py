@@ -10,7 +10,7 @@ class MonitorApp(ctk.CTk):
 super().__init__()
 
 self title ("Reliable Monitor App")
-self geometry("800x600")
+self geometry("900x700")
 
 # Configure a 3x3 grid layout to pin elements exactly to edges and corners
 
@@ -22,51 +22,43 @@ self.grid_columnconfigure(1, weight=1) CC
 self.grid_columnconfigure(2, weight=1) RC
 
 # Java backend configuration url
+self.backend_url = "http://localhost:8080/api/v1"
 
-self.create ui elements
+self.create_ui_elements()
+
+def create_ui_elements(self);
+    # 1. TOP LEFT: Settings
+    self.btn_settings = ctk.CTkButton(self, text=" Settings", command=self.open_settings)
+    self.btn_settings.grid(row=0, column=0, padx=25, pady=25, sticky="nw")
+
+  # 2. TOP CENTER: Home
+    self.btn_home = ctk.CTkButton(self, text=" Home", command=self.open_home)
+    self.btn_home.grid(row=0, column=0, padx=25, pady=25, sticky="n")
+
+  # 3. TOP RIGHT: Saved Data
+    self.btn_home = ctk.CTkButton(self, text=" Saved data", command=self.fetch_saved_data)
+    self.btn_home.grid(row=0, column=2, padx=25, pady=25, sticky="ne")
+
+# 4. EXACT CENTER: Monitor Button
+    self.btn_monitor = ctk.CTkButton(self, text=" MONITOR SYSTEM", width=" 250" height=" 65",
+     font=("Cursive", 17, "bold"), command=self.trigger_monitoring)
+    self.btn_monitor.grid(row=1, column=1, padx=25, pady=25, sticky="nsew") # standard centering 
+
+# 5. BOTTOM CENTER: Save Button
+    self.btn_save = ctk.CTkButton(self, text=" Save Current", fg_color="black" command=self.save_current_state)
+    self.btn_save.grid(row=2, column=1, padx=25, pady=25, sticky="sw")
+
+# 6. BOTTOM CENTER: Collaboration Room
+    self.btn_collab = ctk.CTkButton(self, text=" Collaboration Room", command=self.enter_collab_room )
+    self.btn_collab.grid(row=2, column=1, padx=25, pady=25, sticky="s")
+
+  # 7. BOTTOM RIGHT: Menu Hamburger
+    self.btn_hamburger = ctk.CTkButton(self, text="  ", width=55, command=self.toggle_hamburger_menu )
+    self.btn_hamburger.grid(row=2, column=2, padx=25, pady=25, sticky="se")
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import customtkinter as ctk
-import requests
-
-# Set UI Theme styling
-ctk.set_appearance_mode("System")
-ctk.set_default_color_theme("blue")
-
-class MonitorApp(ctk.CTk):
-    def __init__(self):
-        super().__init__()
-
-        self.title("Reliable Monitor App")
-        self.geometry("800x600")
-        
-        # Configure a 3x3 grid layout to pin elements exactly to edges and corners
-        self.grid_rowconfigure(0, weight=1)  # Top row
-        self.grid_rowconfigure(1, weight=2)  # Center row (given more space)
-        self.grid_rowconfigure(2, weight=1)  # Bottom row
-        self.grid_columnconfigure(0, weight=1) # Left column
-        self.grid_columnconfigure(1, weight=1) # Center column
-        self.grid_columnconfigure(2, weight=1) # Right column
+  
 
         # Java Backend Configuration URL
         self.backend_url = "http://localhost:8080/api/v1"
@@ -76,7 +68,7 @@ class MonitorApp(ctk.CTk):
     def create_ui_elements(self):
         # 1. TOP LEFT: Settings
         self.btn_settings = ctk.CTkButton(self, text="⚙️ Settings", command=self.open_settings)
-        self.btn_settings.grid(row=0, column=0, padx=20, pady=20, sticky="nw")
+        self.btn_settings.grid(row=0, column=0, padx=25, pady=25, sticky="nw")
 
         # 2. TOP CENTER: Home
         self.btn_home = ctk.CTkButton(self, text="🏠 Home", command=self.go_home)
