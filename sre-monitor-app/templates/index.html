@@ -12,12 +12,20 @@ body {
    padding: 0 25px;
    line-height: 1.6;
 }
+
+.status-connected { color:#0000CD; font-weight: bold; } /* medium blue */ 
+ .status-disconnected { color:#FFFF00; font-weight: bold; } /* medium red */
+ .status-loading { color:#EE82EE; font-weight: bold; } /* medium yellow */ 
   </style>
 </head>  
 <body>
   <h1>Welcome to Unique Monitoring App</h1>
- <p>Status: <strong>{{ system_data.status }}</strong></p>
- <p>Uptime: <strong>{{ system_data.status }}</strong></p>
+ <p>Current Status: 
+   <span class="status-{{ system_data.status.lower().replace'...', '') }}">
+{{ system_data.status }}
+    </span>
+ </p>
+  <p>System Uptime: <strong>{{ system_data.uptime }}</strong></p>
 </body>   
 </html>
 
