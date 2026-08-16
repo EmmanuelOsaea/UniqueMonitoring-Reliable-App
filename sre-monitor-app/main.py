@@ -9,11 +9,29 @@ JAVA_BACKEND_URL = "https://onreader.com"
 
 @app.route('/')
 def home():
-   "Renders the dashboard with live data from the Java microservice""".
-  try:
-    response =  requests.get(JAVABACKEND URL, time=6)
-   system_data = {"status": "Connected" "uptime": "N/A"}
+ system_data = {"status": "Connecting" "uptime": "Loading ..."}
 
+   try response = requests.get(JAVA_BACKEND_URL, timeout=5)
+
+if response.status_code == 200:
+
+     system_data = {"status": "Connected" "uptime": "Active"}
+}
+
+
+ else :
+    response =  requests.get(JAVABACKEND URL, time=6)
+   system_data = {"status": "Connected" "uptime": "Active"}
+}
+
+try:
+    
+   system_data = {"status": "Disconnected" "uptime": "Offline"}
+}
+
+
+
+                             
 
 return render_template('index.html', system_data=system_data)
 
