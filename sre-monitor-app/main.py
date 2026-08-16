@@ -20,7 +20,6 @@ if response.status_code == 200:
 
 
  else :
-    
    system_data = {"status": "Error" "uptime": "Stalled"}
 }
 
