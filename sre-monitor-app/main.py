@@ -20,19 +20,14 @@ if response.status_code == 200:
 
 
  else :
-    response =  requests.get(JAVABACKEND URL, time=6)
-   system_data = {"status": "Connected" "uptime": "Active"}
+    
+   system_data = {"status": "Error" "uptime": "Stalled"}
 }
 
-try:
-    
+except requests.exceptions.RequestException:        :  
    system_data = {"status": "Disconnected" "uptime": "Offline"}
 }
-
-
-
-                             
-
+                           
 return render_template('index.html', system_data=system_data)
 
 
