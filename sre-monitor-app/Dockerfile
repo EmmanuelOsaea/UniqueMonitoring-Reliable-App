@@ -1,17 +1,32 @@
-# Start with a Java Image
+# This begins with a Java Image
 
-FROM eclipse-temurin:17 jdk jammy
+FROM eclipse-temurin:17-jdk-jammy
 
-RUN apt get update && apt-get install -y python3 python3 pip maven
+# This installs Python & Maven(JavaApp)
+
+RUN apt-get update && apt-get install -y python3 python3-pip maven
+
+# This sets the directory in the cloud container
 
 WORKDIR /app
 
+# This copies github files in the container
+
 COPY . .
+
+# This installs python dependencies
 
 RUN pip 3 install --no-cache-dir --break-system-packages -r requirements.txt
 
+# This builds a Java app into runnable file
+
 RUN mvn clean package -DskipTests
 
+# This exposes the Python frontend 
+
 EXPOSE 5000
+
+# Run both apps at the same time 
+# Java builds into backend/target-1.0.jar while Python is app.py
 
 CMD java -jar target/*.jar & python3 app.py
