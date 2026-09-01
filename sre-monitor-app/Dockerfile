@@ -16,7 +16,7 @@ COPY . .
 
 # This installs python dependencies
 
-RUN pip3 install --no-cache-dir 
+RUN pip3 install --no-cache-dir flask==3.0.3 requests==2.32.3 gunicorn==22.0.0
 
 # This builds a Java app into runnable file
 
