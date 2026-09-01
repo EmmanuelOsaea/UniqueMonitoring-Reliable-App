@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-project xmlns="http://apache.org"
+<project xmlns="http://apache.org"
         xmlns:xsi="http://w3.org"
        xsi:schemaLocation="http://apache.org http://apache.org">
 <modelVersion>4.0.0</modelVersion>
@@ -8,7 +8,7 @@ project xmlns="http://apache.org"
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-parent</artifactId>
   <version>3.3.4</version>
-  <relativePath>
+  <relativePath/>
   </parent>
 
 <groupId>com.monitoring</groupId>
@@ -19,15 +19,15 @@ project xmlns="http://apache.org"
 
 <properties>
  <java.version>17</java.version>
-<properties>
+         </properties>
 
  <dependencies>
  <dependency>
      <groupId>org.springframwork.boot</groupId>
      <artifactId>spring-book-starter-web</artifactId>
          <scope>test</scope>
-         <dependency>
-                <dependencies> 
+ </dependency>
+ </dependencies> 
 
               <build>
                 <plugins>
