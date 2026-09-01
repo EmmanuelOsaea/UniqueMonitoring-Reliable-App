@@ -16,7 +16,7 @@ COPY . .
 
 # This installs python dependencies
 
-RUN pip3 install --no-cache-dir -r src/requirements.txt
+RUN pip3 install --no-cache-dir 
 
 # This builds a Java app into runnable file
 
