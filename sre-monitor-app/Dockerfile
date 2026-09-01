@@ -29,4 +29,4 @@ EXPOSE 5000
 # Run both apps at the same time 
 # Java builds into backend/target-1.0.jar while Python is app.py
 
-CMD java -jar target/*.jar & python3 app.py
+CMD java -jar target/*.jar & flask run --host=0.0.0.0 --port=5000
