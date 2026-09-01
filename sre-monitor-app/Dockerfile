@@ -20,7 +20,7 @@ RUN pip3 install --no-cache-dir flask==3.0.3 requests==2.32.3 gunicorn==22.0.0
 
 # This builds a Java app into runnable file
 
-RUN mvn clean package -DskipTests
+RUN mvn clean package -DskipTests -f backend-java/pom.xml
 
 # This exposes the Python frontend 
 
