@@ -8,7 +8,13 @@
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-parent</artifactId>
   <version>3.3.4</version>
-  <relativePath/>
+ <configuration> 
+ <mainClass>com.monitoring. </mainClass>
+ 
+ </configuration>
+        
+ 
+ <relativePath/>
   </parent>
 
 <groupId>com.monitoring</groupId>
