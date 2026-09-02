@@ -24,7 +24,7 @@
  <dependencies>
  <dependency>
      <groupId>org.springframework.boot</groupId>
-     <artifactId>spring-book-starter-web</artifactId>
+     <artifactId>spring-boot-starter-web</artifactId>
          <scope>test</scope>
  </dependency>
  </dependencies> 
