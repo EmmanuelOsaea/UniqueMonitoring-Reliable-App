@@ -7,10 +7,7 @@
 <parent>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-parent</artifactId>
-  <version>3.3.4</version>
- <configuration> 
- <mainClass>BackendApplication</mainClass> 
- </configuration>      
+  <version>3.3.4</version>    
  <relativePath/>
   </parent>
 
@@ -31,11 +28,16 @@
          <scope>test</scope>
  </dependency>
  </dependencies> 
-
-              <build>
+               <build>
                 <plugins>
                  <plugin>
-                      <groupId>org.springframework.boot</groupId>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-starter-web</artifactId> 
+                <version>3.3.4</version>
+           <configuration>
+      <mainClass>BackendApplication</mainClass>                                
+           </configuration>
+                <groupId>org.springframework.boot</groupId>
                       <artifactId>spring-boot-maven-plugin</artifactId>  
                  </plugin>
                       </plugins>  
