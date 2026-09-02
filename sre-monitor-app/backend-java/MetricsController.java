@@ -12,6 +12,6 @@ public MetricsController(MetricsService metricsService) {
 
 @GetMapping("/api/status")
 public String getStatus() {
-     return ;
+     return "UP";
 }
 }
