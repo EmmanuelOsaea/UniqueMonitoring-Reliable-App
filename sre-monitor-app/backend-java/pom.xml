@@ -25,20 +25,21 @@
  <dependency>
      <groupId>org.springframework.boot</groupId>
      <artifactId>spring-boot-starter-web</artifactId>
-         <scope>test</scope>
  </dependency>
- </dependencies> 
+
+ 
+ <groupId>org.springframework.boot</groupId>
+     <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+  </dependencies> 
                <build>
                 <plugins>
                  <plugin>
                <groupId>org.springframework.boot</groupId>
-               <artifactId>spring-boot-starter-web</artifactId> 
-                <version>3.3.4</version>
+             <artifactId>spring-boot-maven-plugin</artifactId> 
            <configuration>
-      <mainClass>BackendApplication</mainClass>                                
-           </configuration>
-                <groupId>org.springframework.boot</groupId>
-                      <artifactId>spring-boot-maven-plugin</artifactId>  
+      <mainClass>monitoring.backend.BackendApplication</mainClass>                                
+           </configuration>  
                  </plugin>
                       </plugins>  
               </build>
