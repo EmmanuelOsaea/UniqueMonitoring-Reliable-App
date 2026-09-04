@@ -29,6 +29,6 @@ EXPOSE 5000
 # Run both apps at the same time 
 # Java builds into backend/target-1.0.jar while Python is app.py
 
-CMD ["/bin/bash", "-c", "java -jar sre-monitor-app/backend-java/target/backend-0.0.1-SNAPSHOT.jar & flask run --host=0.0.0.0 --port=5000"]
+CMD ["/bin/bash", "-c", "java -jar sre-monitor-app/backend-java/target/backend-0.0.1-SNAPSHOT.jar & FLASK_APP=sre-monitor-app/main.py flask run --host=0.0.0.0 --port=5000"]
 
 
